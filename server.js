@@ -27,7 +27,7 @@ const server = http.createServer(async (req, res) => {
 
     console.log(`${req.method} ${pathname}`);
 
-    // Servir archivos estáticos (solo GET)
+    // Manejar GET
     if (req.method === 'GET') {
         // Si piden la raíz, servir index.html
         let filePath;
@@ -82,10 +82,69 @@ const server = http.createServer(async (req, res) => {
                 `);
             }
         }
-    } else {
-        // Métodos no implementados aún
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end('<h1>Ruta no encontrada</h1>');
+    }
+    
+    // Manejar POST
+    else if (req.method === 'POST') {
+        
+        // POST /auth/recuperar - Login de demostración
+        if (pathname === '/auth/recuperar') {
+            let body = '';
+
+            // Leer datos del body
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+
+            req.on('end', () => {
+                // Parsear datos del formulario
+                const params = new URLSearchParams(body);
+                const usuario = params.get('usuario');
+                const clave = params.get('clave');
+
+                // Devolver HTML con los datos
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(`
+                    <!DOCTYPE html>
+                    <html lang="es">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>AgroTrack - Datos de Login</title>
+                        <link rel="stylesheet" href="/estilos.css">
+                    </head>
+                    <body>
+                        <header>
+                            <h1>AgroTrack</h1>
+                            <p>Portal Web Interno</p>
+                        </header>
+
+                        <main>
+                            <h2>Datos de Login Recibidos</h2>
+                            <p><strong>Usuario:</strong> ${usuario}</p>
+                            <p><strong>Clave:</strong> ${clave}</p>
+                            <p><a href="/login.html">Volver al login</a></p>
+                            <p><a href="/">Volver al inicio</a></p>
+                        </main>
+
+                        <footer>
+                            <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                        </footer>
+                    </body>
+                    </html>
+                `);
+            });
+        } else {
+            // Ruta POST no encontrada
+            res.writeHead(404, { 'Content-Type': 'text/html' });
+            res.end('<h1>Ruta no encontrada</h1>');
+        }
+    }
+    
+    else {
+        // Otros métodos no soportados
+        res.writeHead(405, { 'Content-Type': 'text/html' });
+        res.end('<h1>Método no permitido</h1>');
     }
 });
 
