@@ -91,18 +91,15 @@ const server = http.createServer(async (req, res) => {
         if (pathname === '/auth/recuperar') {
             let body = '';
 
-            // Leer datos del body
             req.on('data', chunk => {
                 body += chunk.toString();
             });
 
             req.on('end', () => {
-                // Parsear datos del formulario
                 const params = new URLSearchParams(body);
                 const usuario = params.get('usuario');
                 const clave = params.get('clave');
 
-                // Devolver HTML con los datos
                 res.writeHead(200, { 'Content-Type': 'text/html' });
                 res.end(`
                     <!DOCTYPE html>
@@ -134,7 +131,101 @@ const server = http.createServer(async (req, res) => {
                     </html>
                 `);
             });
-        } else {
+        }
+        
+        // POST /contacto/cargar - Guardar consulta
+        else if (pathname === '/contacto/cargar') {
+            let body = '';
+
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+
+            req.on('end', async () => {
+                try {
+                    // Parsear datos del formulario
+                    const params = new URLSearchParams(body);
+                    const nombre = params.get('nombre');
+                    const email = params.get('email');
+                    const mensaje = params.get('mensaje');
+
+                    // Obtener fecha y hora actual
+                    const fecha = new Date().toLocaleString('es-AR', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+
+                    // Formatear texto de la consulta
+                    const consulta = `-------------------------
+Fecha: ${fecha}
+Nombre: ${nombre}
+Email: ${email}
+Mensaje: ${mensaje}
+-------------------------
+
+`;
+
+                    // Guardar en el archivo
+                    const filePath = path.join(__dirname, 'data', 'consultas.txt');
+                    await fs.appendFile(filePath, consulta, 'utf8');
+
+                    // Responder con HTML de confirmación
+                    res.writeHead(200, { 'Content-Type': 'text/html' });
+                    res.end(`
+                        <!DOCTYPE html>
+                        <html lang="es">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>AgroTrack - Consulta Enviada</title>
+                            <link rel="stylesheet" href="/estilos.css">
+                        </head>
+                        <body>
+                            <header>
+                                <h1>AgroTrack</h1>
+                                <p>Portal Web Interno</p>
+                            </header>
+
+                            <main>
+                                <h2>¡Consulta Enviada Exitosamente!</h2>
+                                <p>Gracias <strong>${nombre}</strong>, tu consulta ha sido guardada.</p>
+                                <p>Te contactaremos a: <strong>${email}</strong></p>
+                                <p><a href="/contacto.html">Enviar otra consulta</a></p>
+                                <p><a href="/contacto/listar">Ver todas las consultas</a></p>
+                                <p><a href="/">Volver al inicio</a></p>
+                            </main>
+
+                            <footer>
+                                <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                            </footer>
+                        </body>
+                        </html>
+                    `);
+                } catch (error) {
+                    // Error al guardar
+                    res.writeHead(500, { 'Content-Type': 'text/html' });
+                    res.end(`
+                        <!DOCTYPE html>
+                        <html lang="es">
+                        <head>
+                            <meta charset="UTF-8">
+                            <title>500 - Error</title>
+                        </head>
+                        <body>
+                            <h1>Error 500</h1>
+                            <p>Error al guardar la consulta.</p>
+                            <a href="/contacto.html">Volver</a>
+                        </body>
+                        </html>
+                    `);
+                }
+            });
+        }
+        
+        else {
             // Ruta POST no encontrada
             res.writeHead(404, { 'Content-Type': 'text/html' });
             res.end('<h1>Ruta no encontrada</h1>');
