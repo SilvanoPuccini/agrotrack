@@ -268,5 +268,3 @@ El proyecto incluye una colección de Postman (`AgroTrack.postman_collection.jso
 Este proyecto es de uso académico para la materia Programación Web 2 de UNDEF.
 ```
 
----
-
