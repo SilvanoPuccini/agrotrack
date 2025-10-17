@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "8751250b-5dfb-4237-a836-599802ca6b0b",
+		"name": "AgroTrack",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49335907",
+		"_collection_link": "https://spuccini287-2698006.postman.co/workspace/Silvano-Puccini's-Workspace~e2f55823-3a19-429f-8a2e-b1992b349f7f/collection/49335907-8751250b-5dfb-4237-a836-599802ca6b0b?action=share&source=collection_link&creator=49335907"
+	},
+	"item": [
+		{
+			"name": "GET - index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/productos.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"productos.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Contacto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/contacto.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"contacto.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/login.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"login.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Auth Recuperar (Login)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "usuario",
+							"value": "juan",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8888/auth/recuperar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"auth",
+						"recuperar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Contacto Cargar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/contacto/cargar?nombre=María González&email=mgonzalez@mail.com&mensaje=Consulta sobre precios de fertilizantes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"contacto",
+						"cargar"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "María González"
+						},
+						{
+							"key": "email",
+							"value": "mgonzalez@mail.com"
+						},
+						{
+							"key": "mensaje",
+							"value": "Consulta sobre precios de fertilizantes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Contacto Listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/contacto/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"contacto",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
