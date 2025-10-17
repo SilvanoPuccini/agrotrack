@@ -1,6 +1,10 @@
-[200~<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0"> <title>AgroTrack - Login</title>
-    <link rel="stylesheet" href="/estils.css">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTrack - Login</title>
+    <link rel="stylesheet" href="/estilos.css">
 </head>
 <body>
     <header>
@@ -17,13 +21,14 @@
 
     <main>
         <h2>Iniciar Sesión</h2>
+        <p>Ingresa tus credenciales para acceder al sistema.</p>
         
         <form action="/auth/recuperar" method="POST">
             <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" required>
+            <input type="text" id="usuario" name="usuario" required placeholder="Ingrese su usuario">
 
             <label for="clave">Contraseña:</label>
-            <input type="password" id="clave" name="clave" required>
+            <input type="password" id="clave" name="clave" required placeholder="Ingrese su contraseña">
 
             <button type="submit">Ingresar</button>
         </form>

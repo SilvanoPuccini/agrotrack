@@ -63,8 +63,10 @@ const server = http.createServer(async (req, res) => {
                             <main>
                                 <h2>Consultas Recibidas</h2>
                                 <pre>${data}</pre>
-                                <p><a href="/contacto.html">Enviar nueva consulta</a></p>
-                                <p><a href="/">Volver al inicio</a></p>
+                                <p>
+                                    <a href="/contacto.html">Enviar nueva consulta</a>
+                                    <a href="/">Volver al inicio</a>
+                                </p>
                             </main>
 
                             <footer>
@@ -100,9 +102,11 @@ const server = http.createServer(async (req, res) => {
 
                             <main>
                                 <h2>Consultas Recibidas</h2>
-                                <p>Aún no hay consultas.</p>
-                                <p><a href="/contacto.html">Enviar nueva consulta</a></p>
-                                <p><a href="/">Volver al inicio</a></p>
+                                <p>Aún no hay consultas registradas.</p>
+                                <p>
+                                    <a href="/contacto.html">Enviar nueva consulta</a>
+                                    <a href="/">Volver al inicio</a>
+                                </p>
                             </main>
 
                             <footer>
@@ -140,9 +144,11 @@ const server = http.createServer(async (req, res) => {
 
                             <main>
                                 <h2>Consultas Recibidas</h2>
-                                <p>Aún no hay consultas.</p>
-                                <p><a href="/contacto.html">Enviar nueva consulta</a></p>
-                                <p><a href="/">Volver al inicio</a></p>
+                                <p>Aún no hay consultas registradas.</p>
+                                <p>
+                                    <a href="/contacto.html">Enviar nueva consulta</a>
+                                    <a href="/">Volver al inicio</a>
+                                </p>
                             </main>
 
                             <footer>
@@ -159,12 +165,32 @@ const server = http.createServer(async (req, res) => {
                         <html lang="es">
                         <head>
                             <meta charset="UTF-8">
-                            <title>500 - Error</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>AgroTrack - Error</title>
+                            <link rel="stylesheet" href="/estilos.css">
                         </head>
                         <body>
-                            <h1>Error 500</h1>
-                            <p>Error al leer las consultas.</p>
-                            <a href="/">Volver al inicio</a>
+                            <header>
+                                <h1>AgroTrack</h1>
+                                <p>Portal Web Interno</p>
+                            </header>
+
+                            <nav>
+                                <a href="/">Inicio</a>
+                                <a href="/productos.html">Productos</a>
+                                <a href="/contacto.html">Contacto</a>
+                                <a href="/login.html">Login</a>
+                            </nav>
+
+                            <main>
+                                <h2>Error 500</h2>
+                                <p>Error interno del servidor al leer las consultas.</p>
+                                <p><a href="/">Volver al inicio</a></p>
+                            </main>
+
+                            <footer>
+                                <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                            </footer>
                         </body>
                         </html>
                     `);
@@ -195,12 +221,32 @@ const server = http.createServer(async (req, res) => {
                         <html lang="es">
                         <head>
                             <meta charset="UTF-8">
-                            <title>404 - No encontrado</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>AgroTrack - 404</title>
+                            <link rel="stylesheet" href="/estilos.css">
                         </head>
                         <body>
-                            <h1>Error 404</h1>
-                            <p>La página que buscas no existe.</p>
-                            <a href="/">Volver al inicio</a>
+                            <header>
+                                <h1>AgroTrack</h1>
+                                <p>Portal Web Interno</p>
+                            </header>
+
+                            <nav>
+                                <a href="/">Inicio</a>
+                                <a href="/productos.html">Productos</a>
+                                <a href="/contacto.html">Contacto</a>
+                                <a href="/login.html">Login</a>
+                            </nav>
+
+                            <main>
+                                <h2>Error 404 - Página No Encontrada</h2>
+                                <p>Lo sentimos, la página que buscas no existe.</p>
+                                <p><a href="/">Volver al inicio</a></p>
+                            </main>
+
+                            <footer>
+                                <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                            </footer>
                         </body>
                         </html>
                     `);
@@ -211,12 +257,32 @@ const server = http.createServer(async (req, res) => {
                         <html lang="es">
                         <head>
                             <meta charset="UTF-8">
-                            <title>500 - Error interno</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>AgroTrack - Error</title>
+                            <link rel="stylesheet" href="/estilos.css">
                         </head>
                         <body>
-                            <h1>Error 500</h1>
-                            <p>Error interno del servidor.</p>
-                            <a href="/">Volver al inicio</a>
+                            <header>
+                                <h1>AgroTrack</h1>
+                                <p>Portal Web Interno</p>
+                            </header>
+
+                            <nav>
+                                <a href="/">Inicio</a>
+                                <a href="/productos.html">Productos</a>
+                                <a href="/contacto.html">Contacto</a>
+                                <a href="/login.html">Login</a>
+                            </nav>
+
+                            <main>
+                                <h2>Error 500</h2>
+                                <p>Error interno del servidor.</p>
+                                <p><a href="/">Volver al inicio</a></p>
+                            </main>
+
+                            <footer>
+                                <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                            </footer>
                         </body>
                         </html>
                     `);
@@ -256,12 +322,21 @@ const server = http.createServer(async (req, res) => {
                             <p>Portal Web Interno</p>
                         </header>
 
+                        <nav>
+                            <a href="/">Inicio</a>
+                            <a href="/productos.html">Productos</a>
+                            <a href="/contacto.html">Contacto</a>
+                            <a href="/login.html">Login</a>
+                        </nav>
+
                         <main>
                             <h2>Datos de Login Recibidos</h2>
                             <p><strong>Usuario:</strong> ${usuario}</p>
-                            <p><strong>Clave:</strong> ${clave}</p>
-                            <p><a href="/login.html">Volver al login</a></p>
-                            <p><a href="/">Volver al inicio</a></p>
+                            <p><strong>Contraseña:</strong> ${clave}</p>
+                            <p>
+                                <a href="/login.html">Volver al login</a>
+                                <a href="/">Volver al inicio</a>
+                            </p>
                         </main>
 
                         <footer>
@@ -324,13 +399,22 @@ Mensaje: ${mensaje}
                                 <p>Portal Web Interno</p>
                             </header>
 
+                            <nav>
+                                <a href="/">Inicio</a>
+                                <a href="/productos.html">Productos</a>
+                                <a href="/contacto.html">Contacto</a>
+                                <a href="/login.html">Login</a>
+                            </nav>
+
                             <main>
                                 <h2>¡Consulta Enviada Exitosamente!</h2>
-                                <p>Gracias <strong>${nombre}</strong>, tu consulta ha sido guardada.</p>
-                                <p>Te contactaremos a: <strong>${email}</strong></p>
-                                <p><a href="/contacto.html">Enviar otra consulta</a></p>
-                                <p><a href="/contacto/listar">Ver todas las consultas</a></p>
-                                <p><a href="/">Volver al inicio</a></p>
+                                <p>Gracias <strong>${nombre}</strong>, tu consulta ha sido guardada correctamente.</p>
+                                <p>Te contactaremos a la brevedad en: <strong>${email}</strong></p>
+                                <p>
+                                    <a href="/contacto.html">Enviar otra consulta</a>
+                                    <a href="/contacto/listar">Ver todas las consultas</a>
+                                    <a href="/">Volver al inicio</a>
+                                </p>
                             </main>
 
                             <footer>
@@ -346,12 +430,32 @@ Mensaje: ${mensaje}
                         <html lang="es">
                         <head>
                             <meta charset="UTF-8">
-                            <title>500 - Error</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>AgroTrack - Error</title>
+                            <link rel="stylesheet" href="/estilos.css">
                         </head>
                         <body>
-                            <h1>Error 500</h1>
-                            <p>Error al guardar la consulta.</p>
-                            <a href="/contacto.html">Volver</a>
+                            <header>
+                                <h1>AgroTrack</h1>
+                                <p>Portal Web Interno</p>
+                            </header>
+
+                            <nav>
+                                <a href="/">Inicio</a>
+                                <a href="/productos.html">Productos</a>
+                                <a href="/contacto.html">Contacto</a>
+                                <a href="/login.html">Login</a>
+                            </nav>
+
+                            <main>
+                                <h2>Error 500</h2>
+                                <p>Error al guardar la consulta.</p>
+                                <p><a href="/contacto.html">Intentar nuevamente</a></p>
+                            </main>
+
+                            <footer>
+                                <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                            </footer>
                         </body>
                         </html>
                     `);
@@ -359,11 +463,77 @@ Mensaje: ${mensaje}
       });
     } else {
       res.writeHead(404, { "Content-Type": "text/html" });
-      res.end("<h1>Ruta no encontrada</h1>");
+      res.end(`
+                <!DOCTYPE html>
+                <html lang="es">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>AgroTrack - 404</title>
+                    <link rel="stylesheet" href="/estilos.css">
+                </head>
+                <body>
+                    <header>
+                        <h1>AgroTrack</h1>
+                        <p>Portal Web Interno</p>
+                    </header>
+
+                    <nav>
+                        <a href="/">Inicio</a>
+                        <a href="/productos.html">Productos</a>
+                        <a href="/contacto.html">Contacto</a>
+                        <a href="/login.html">Login</a>
+                    </nav>
+
+                    <main>
+                        <h2>Ruta No Encontrada</h2>
+                        <p>La ruta solicitada no existe.</p>
+                        <p><a href="/">Volver al inicio</a></p>
+                    </main>
+
+                    <footer>
+                        <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                    </footer>
+                </body>
+                </html>
+            `);
     }
   } else {
     res.writeHead(405, { "Content-Type": "text/html" });
-    res.end("<h1>Método no permitido</h1>");
+    res.end(`
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>AgroTrack - 405</title>
+                <link rel="stylesheet" href="/estilos.css">
+            </head>
+            <body>
+                <header>
+                    <h1>AgroTrack</h1>
+                    <p>Portal Web Interno</p>
+                </header>
+
+                <nav>
+                    <a href="/">Inicio</a>
+                    <a href="/productos.html">Productos</a>
+                    <a href="/contacto.html">Contacto</a>
+                    <a href="/login.html">Login</a>
+                </nav>
+
+                <main>
+                    <h2>Método No Permitido</h2>
+                    <p>El método HTTP utilizado no está permitido.</p>
+                    <p><a href="/">Volver al inicio</a></p>
+                </main>
+
+                <footer>
+                    <p>&copy; 2025 AgroTrack - Portal Interno</p>
+                </footer>
+            </body>
+            </html>
+        `);
   }
 });
 

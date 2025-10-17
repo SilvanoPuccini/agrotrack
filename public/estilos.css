@@ -1,72 +1,148 @@
-[200~* { margin: 0; padding: 0; box-sizing: border-box;
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; padding: 20px;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2d3436;
+    background-color: #f0f4f3;
+    min-height: 100vh;
+    padding: 0;
 }
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(to right, #27ae60, #2ecc71);
     color: white;
-    padding: 20px;
+    padding: 50px 40px;
     text-align: center;
-    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin-bottom: 5px;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
+header p {
+    font-size: 1.15em;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* Navegación */
 nav {
-    background-color: #34495e;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
+    background: white;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    color: #2d3436;
     text-decoration: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    display: inline-block;
+    padding: 20px 35px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
 nav a:hover {
-    background-color: #2c3e50;
+    background-color: #f8f9fa;
+    border-bottom: 3px solid #27ae60;
+    color: #27ae60;
 }
 
+/* Contenido principal */
 main {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    background: white;
+    padding: 50px;
+    margin: 40px auto;
+    max-width: 1100px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
+    color: #27ae60;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8f5e9;
 }
 
 h3 {
-    color: #34495e;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    color: #2d3436;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
 }
 
-section {
+p {
     margin-bottom: 20px;
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #4a5568;
 }
 
+/* Secciones */
+section {
+    background: #f8fdf9;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    border-left: 4px solid #27ae60;
+}
+
+/* Listas */
 ul {
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-bottom: 25px;
 }
 
+ul li {
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #4a5568;
+}
+
+/* Formularios */
 form {
-    max-width: 500px;
+    max-width: 650px;
+    background: #fafafa;
+    padding: 40px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    margin-top: 30px;
 }
 
 label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 1em;
+}
+
+label:first-of-type {
+    margin-top: 0;
 }
 
 input[type="text"],
@@ -74,33 +150,175 @@ input[type="email"],
 input[type="password"],
 textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    font-size: 14px;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    background: white;
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #2c3e50;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #27ae60;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Botones */
+button,
+button[type="submit"] {
+    margin-top: 30px;
+    padding: 14px 40px;
+    background-color: #27ae60;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #34495e;
+button:hover,
+button[type="submit"]:hover {
+    background-color: #229954;
 }
 
+button:active,
+button[type="submit"]:active {
+    background-color: #1e8449;
+}
+
+/* Enlaces */
+a {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #229954;
+    text-decoration: underline;
+}
+
+main p a {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px 20px;
+    background: #f8fdf9;
+    border: 1px solid #c8e6c9;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+main p a:hover {
+    background: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-color: #27ae60;
+}
+
+/* Pre (para consultas) */
+pre {
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    line-height: 1.9;
+    color: #2d3436;
+    margin-top: 20px;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 15px;
-    background-color: #2c3e50;
-    color: white;
+    padding: 30px;
+    background: white;
+    color: #4a5568;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.08);
+    margin-top: 40px;
 }
 
-a {
-    color: #2c3e50;
+/* Strong */
+strong {
+    color: #27ae60;
+    font-weight: 700;
 }
 
+/* Mensajes de éxito/confirmación */
+main h2 + p {
+    font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 35px 25px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 18px;
+        border-bottom: 1px solid #f0f0f0;
+        border-left: 3px solid transparent;
+    }
+
+    nav a:hover {
+        border-bottom: 1px solid #f0f0f0;
+        border-left: 3px solid #27ae60;
+    }
+
+    main {
+        padding: 30px 20px;
+        margin: 20px 10px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    form {
+        padding: 25px;
+    }
+}
+
+/* Espaciado general más limpio */
+section + section {
+    margin-top: 25px;
+}
+
+p + p {
+    margin-top: 15px;
+}
+
+/* Mejora visual de inputs con contenido */
+input[type="text"]:not(:placeholder-shown),
+input[type="email"]:not(:placeholder-shown),
+input[type="password"]:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+    border-color: #a5d6a7;
+}
