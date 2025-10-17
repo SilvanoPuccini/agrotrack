@@ -124,8 +124,28 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "María González",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mgonzalez@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "mensaje",
+							"value": "Consulta sobre precios de fertilizantes",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "http://localhost:8888/contacto/cargar?nombre=María González&email=mgonzalez@mail.com&mensaje=Consulta sobre precios de fertilizantes",
+					"raw": "http://localhost:8888/contacto/cargar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -134,20 +154,6 @@
 					"path": [
 						"contacto",
 						"cargar"
-					],
-					"query": [
-						{
-							"key": "nombre",
-							"value": "María González"
-						},
-						{
-							"key": "email",
-							"value": "mgonzalez@mail.com"
-						},
-						{
-							"key": "mensaje",
-							"value": "Consulta sobre precios de fertilizantes"
-						}
 					]
 				}
 			},
